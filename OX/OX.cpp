@@ -10,12 +10,12 @@ void clear();
 
 int main()
 {
-    vector<vector<char>> board = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+    vector<vector<char>> board = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} };
     // 0 -> empty    1 -> X    2 -> O
     bool isXturn = true;
     unsigned short turnCount = 0;
     unsigned short option;
-    repeat:
+repeat:
     bot* aiBot = nullptr;
     cout << "Tic-Tac-Toe Board:" << endl << endl;
     cout << " 1 | 2 | 3 " << endl;
@@ -28,7 +28,7 @@ int main()
     clear();
     cout << "\nYou can either play solo or with a friend.\n";
     cout << "There are 4 difficulties to choose:\n\n";
-    
+
     cout << "1 - EASY\n";
     cout << "2 - MEDIUM\n";
     cout << "3 - HARD\n";
@@ -44,6 +44,15 @@ int main()
     {
         cout << "Mode set to medium!";
         aiBot = new mediumBot();
+    }
+    else if (option == 0)
+    {
+        clear();
+        cout << "1 - Play with friend\n";
+        cout << "2 - Challenge mode (not yet available)\n\n";
+        cin >> option;
+        option == 1 ? aiBot = nullptr : aiBot = nullptr;
+        cout << "Mode set!";
     }
     else
     {
@@ -64,7 +73,7 @@ int main()
             cout << "Its a draw!\n\n";
             break;
         }
-        GameManager.playRound(board, isXturn, aiBot);
+        aiBot == nullptr ? GameManager.playRound(board, isXturn) : GameManager.playRound(board, isXturn, aiBot);
         isXturn = !isXturn;
         if (Game.winCheck(board, isXturn, turnCount))
         {
