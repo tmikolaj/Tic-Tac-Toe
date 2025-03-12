@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "easyBot.hpp"
 #include "mediumBot.hpp"
+#include "hardBot.h"
 #include "game.h"
 #include "gameManager.h"
 
@@ -35,15 +36,24 @@ repeat:
     cout << "4 - IMPOSSIBLE TO WIN\n";
     cout << "\n0 - Other modes\n\n";
     cin >> option;
-    if ((option < 0 || option > 4) || option == 1)
+    if (option < 0 || option > 4)
     {
-        cout << "Mode set to easy!";
+        cout << "Invalid mode!";
+        option = 1;
+    }
+    if (option == 1)
+    {
         aiBot = new easyBot();
     }
     else if (option == 2)
     {
         cout << "Mode set to medium!";
         aiBot = new mediumBot();
+    }
+    else if (option == 3)
+    {
+        cout << "Mode set to hard!";
+        aiBot = new hardBot();
     }
     else if (option == 0)
     {
@@ -85,7 +95,8 @@ repeat:
         }
         clear();
     }
-    delete aiBot;
+    if (aiBot)
+        delete aiBot;
     cout << "Would you like to play again? (y/n)  ";
     char c;
     cin >> c;

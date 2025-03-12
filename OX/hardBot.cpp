@@ -1,50 +1,49 @@
 #include <stdlib.h>
 #include <ctime>
-#include "mediumBot.hpp"
+#include "hardBot.h"
 
-mediumBot::mediumBot() { }
+hardBot::hardBot() { }
 
-std::vector<std::pair<int, int>> mediumBot::analyzeBoard(const std::vector<std::vector<char>>& board)
+std::vector<std::pair<int, int>> hardBot::analyzeBoard(const std::vector<std::vector<char>>& board)
 {
 	std::vector<std::pair<int, int>> res;
-	for (int i = 0; i < 3; i++)
+
+	if (board[1][1] == ' ') { res.push_back({ 1, 1 }); return res; }
+	if (board[0][0] == ' ') res.push_back({ 0, 0 });
+	if (board[0][2] == ' ') res.push_back({ 0, 2 });
+	if (board[2][0] == ' ') res.push_back({ 2, 0 });
+	if (board[2][2] == ' ') res.push_back({ 2, 2 });
+
+	if (res.empty())
 	{
-		if (board[i][0] == ' ')
-		{
-			res.push_back({ i, 0 });
-		}
-		if (board[i][1] == ' ')
-		{
-			res.push_back({ i , 1 });
-		}
-		if (board[i][2] == ' ')
-		{
-			res.push_back({ i, 2 });
-		}
+		if (board[0][1] == ' ') res.push_back({ 0, 1 });
+		if (board[1][0] == ' ') res.push_back({ 1, 0 });
+		if (board[1][2] == ' ') res.push_back({ 1, 2 });
+		if (board[2][1] == ' ') res.push_back({ 2, 1 });
 	}
 	return res;
 }
 
-void mediumBot::makeMove(std::vector<std::vector<char>>& board)
+void hardBot::makeMove(std::vector<std::vector<char>>& board)
 {
 	srand(time(0));
 	std::vector<std::pair<int, int>> posValues = closeToWinCheck(board);
 	if (!posValues.empty())
 	{
-		int pos = rand() % posValues.size();
-		board[posValues[pos].first][posValues[pos].second] = 'O';
+		int random = rand() % posValues.size();
+		board[posValues[random].first][posValues[random].second] = 'O';
 	}
 	else
 	{
 		posValues = analyzeBoard(board);
 		if (posValues.empty())
 			return;
-		int pos = rand() % posValues.size();
-		board[posValues[pos].first][posValues[pos].second] = 'O';
+		int random = rand() % posValues.size();
+		board[posValues[random].first][posValues[random].second] = 'O';
 	}
 }
 
-std::vector<std::pair<int, int>> mediumBot::closeToWinCheck(const std::vector<std::vector<char>>& board)
+std::vector<std::pair<int, int>> hardBot::closeToWinCheck(const std::vector<std::vector<char>>& board)
 {
 	std::vector<std::pair<int, int>> res;
 	for (int i = 0; i < 3; i++)
@@ -71,4 +70,4 @@ std::vector<std::pair<int, int>> mediumBot::closeToWinCheck(const std::vector<st
 	return res;
 }
 
-mediumBot::~mediumBot() { }
+hardBot::~hardBot() { }

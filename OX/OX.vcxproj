@@ -131,6 +131,7 @@
     <ClCompile Include="easyBot.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameManager.cpp" />
+    <ClCompile Include="hardBot.cpp" />
     <ClCompile Include="mediumBot.cpp" />
     <ClCompile Include="OX.cpp" />
   </ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="easyBot.hpp" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameManager.h" />
+    <ClInclude Include="hardBot.h" />
     <ClInclude Include="mediumBot.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
