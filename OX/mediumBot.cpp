@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <ctime>
 #include "mediumBot.hpp"
 
 mediumBot::mediumBot() { }
@@ -27,7 +25,6 @@ std::vector<std::pair<int, int>> mediumBot::analyzeBoard(const std::vector<std::
 
 void mediumBot::makeMove(std::vector<std::vector<char>>& board)
 {
-	srand(time(0));
 	std::vector<std::pair<int, int>> posValues = closeToWinCheck(board);
 	if (!posValues.empty())
 	{
