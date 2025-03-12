@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <ctime>
 #include "hardBot.h"
 
 hardBot::hardBot() { }
@@ -26,7 +24,6 @@ std::vector<std::pair<int, int>> hardBot::analyzeBoard(const std::vector<std::ve
 
 void hardBot::makeMove(std::vector<std::vector<char>>& board)
 {
-	srand(time(0));
 	std::vector<std::pair<int, int>> posValues = closeToWinCheck(board);
 	if (!posValues.empty())
 	{

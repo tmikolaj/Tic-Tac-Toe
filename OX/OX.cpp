@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <ctime>
 #include "easyBot.hpp"
 #include "mediumBot.hpp"
 #include "hardBot.h"
@@ -11,6 +12,8 @@ void clear();
 
 int main()
 {
+    srand(time(0));
+
     vector<vector<char>> board = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} };
     // 0 -> empty    1 -> X    2 -> O
     bool isXturn = true;
@@ -43,6 +46,7 @@ repeat:
     }
     if (option == 1)
     {
+        cout << "Mode set to easy!";
         aiBot = new easyBot();
     }
     else if (option == 2)

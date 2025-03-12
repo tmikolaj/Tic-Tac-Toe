@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <ctime>
 #include "easyBot.hpp"
 
 easyBot::easyBot() { }
@@ -27,7 +25,6 @@ std::vector<std::pair<int, int>> easyBot::analyzeBoard(const std::vector<std::ve
 
 void easyBot::makeMove(std::vector<std::vector<char>>& board)
 {
-	srand(time(0));
 	std::vector<std::pair<int, int>> posValues = closeToWinCheck(board);
 	int random = rand() % 4; // Sometimes the bot will block the win or go for the win and sometimes not
 	if (!posValues.empty() && random == 0)
