@@ -38,7 +38,7 @@ void easyBot::makeMove(std::vector<std::vector<char>>& board)
 	else
 	{
 		posValues = analyzeBoard(board);
-		if (posValues.size() <= 0)
+		if (posValues.empty())
 			return;
 		random = rand() % posValues.size();
 		board[posValues[random].first][posValues[random].second] = 'O';
