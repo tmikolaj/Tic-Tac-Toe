@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "botClass.hpp"
+#include "botClass.h"
 
 class gameManager {
 public:

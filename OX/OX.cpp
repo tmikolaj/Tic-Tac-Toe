@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <ctime>
-#include "easyBot.hpp"
-#include "mediumBot.hpp"
+#include "easyBot.h"
+#include "mediumBot.h"
 #include "hardBot.h"
 #include "game.h"
 #include "gameManager.h"

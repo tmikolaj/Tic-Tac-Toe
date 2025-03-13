@@ -1,11 +1,13 @@
 #pragma once
-#include "botClass.hpp"
+#include <vector>
+#include <utility>
+#include "botClass.h"
 
-class mediumBot : public bot {
+class easyBot : public bot {
 public:
-	mediumBot();
+	easyBot();
 	void makeMove(std::vector<std::vector<char>>&) override;
 	std::vector< std::pair<int, int>> analyzeBoard(const std::vector<std::vector<char>>&) override;
 	std::vector<std::pair<int, int>> closeToWinCheck(const std::vector<std::vector<char>>&) override;
-	~mediumBot() override;
+	~easyBot() override;
 };

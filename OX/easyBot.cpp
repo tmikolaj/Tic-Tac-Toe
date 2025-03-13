@@ -1,4 +1,4 @@
-#include "easyBot.hpp"
+#include "easyBot.h"
 
 easyBot::easyBot() { }
 

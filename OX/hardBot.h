@@ -1,5 +1,5 @@
 #pragma once
-#include "botClass.hpp"
+#include "botClass.h"
 
 class hardBot : public bot {
 public:

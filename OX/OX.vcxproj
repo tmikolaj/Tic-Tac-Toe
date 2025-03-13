@@ -136,12 +136,12 @@
     <ClCompile Include="OX.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="botClass.hpp" />
-    <ClInclude Include="easyBot.hpp" />
+    <ClInclude Include="botClass.h" />
+    <ClInclude Include="easyBot.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="hardBot.h" />
-    <ClInclude Include="mediumBot.hpp" />
+    <ClInclude Include="mediumBot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

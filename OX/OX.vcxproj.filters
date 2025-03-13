@@ -38,10 +38,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="botClass.hpp">
+    <ClInclude Include="botClass.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="easyBot.hpp">
+    <ClInclude Include="easyBot.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
@@ -50,7 +50,7 @@
     <ClInclude Include="gameManager.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="mediumBot.hpp">
+    <ClInclude Include="mediumBot.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="hardBot.h">

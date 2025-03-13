@@ -1,4 +1,4 @@
-#include "botClass.hpp"
+#include "botClass.h"
 
 bot::bot() { }
 
