@@ -11,7 +11,6 @@ void game::displayBoard(const std::vector<std::vector<char>>& board)
     std::cout << " " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << " " << '\n';
     std::cout << "---+---+---" << '\n';
     std::cout << " " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << " " << '\n' << '\n';
-    std::cout << "X - 1, O - 2\n\n";
 }
 
 bool game::winCheck(const std::vector<std::vector<char>>& board, bool isXturn, unsigned short turnCount)
